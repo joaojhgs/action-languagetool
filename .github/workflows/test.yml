@@ -10,10 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
       - uses: ./
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
+          patterns: '**/locales/en-*.ts'
           level: info
 
   test-pr-check:
@@ -22,10 +25,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
       - uses: ./
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
+          patterns: '**/locales/en-*.ts'
           level: info
 
   test-pr-review:
@@ -34,10 +40,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
       - uses: ./
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           level: info
-          patterns: "**.md"
+          patterns: '**/locales/en-*.ts'
           custom_api_endpoint: https://languagetool.org/api
