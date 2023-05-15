@@ -6,30 +6,7 @@ interface iLanguage {
   
   const en: iLanguage = {
     translations: {
-      languages: {
-        ptBR: 'Portuguese',
-        enUS: 'English',
-      },
-      headerMenu: {
-        logOut: 'Log out',
-        partners: 'Partners',
-        gyms: 'Event venues',
-        myEvents: 'My events',
-        organization: 'Organization',
-      },
       tab: {
-        breadcrumb: {
-          organization: 'Organization',
-          event: 'Event',
-          partners: 'Partners',
-        },
-        authentication: 'Authentication',
-        dashboard: 'Dashboard',
-        futsal: 'Gyms',
-        eventVenue: {
-          default: 'Event venue',
-          futsal: 'Gyms',
-        },
         partners: 'Partners',
         icons: 'Icons',
         leaguePartners: 'Partnerships',
